@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>mssql-server</Name>
+  <Repository>mcr.microsoft.com/mssql/server:latest</Repository>
+  <Registry>https://hub.docker.com/_/microsoft-mssql-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/Microsoft/mssql-docker</Project>
+  <Overview>Official container images for Microsoft SQL Server on Linux for Docker Engine.</Overview>
+  <Category>Productivity:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://i.imgur.com/oo7UM8L.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1618345818</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Official container images for Microsoft SQL Server on Linux for Docker Engine.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1433</HostPort>
+        <ContainerPort>1433</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mssql-server</HostDir>
+      <ContainerDir>/var/opt/mssql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>Y</Value>
+      <Name>ACCEPT_EULA</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SA_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>MSSQL_PID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PORT" Target="1433" Default="1433" Mode="tcp" Description="Container Port: 1433" Type="Port" Display="always" Required="true" Mask="false">1433</Config>
+  <Config Name="ACCEPT_EULA" Target="ACCEPT_EULA" Default="Y" Mode="" Description="Accept EULA. Must be Y." Type="Variable" Display="always" Required="true" Mask="false">Y</Config>
+  <Config Name="SA_PASSWORD" Target="SA_PASSWORD" Default="" Mode="" Description="SA Password. Must be strong password of at least 8 characters." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="MSSQL_PID" Target="MSSQL_PID" Default="" Mode="" Description="SQL Server Edition - Developer (Default), Express,&#13;&#10;Standard, Enterprise, EnterpriseCore" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Data Path" Target="/var/opt/mssql" Default="/var/opt/mssql" Mode="rw" Description="Container Path: /var/opt/mssql" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mssql-server</Config>
+</Container>
